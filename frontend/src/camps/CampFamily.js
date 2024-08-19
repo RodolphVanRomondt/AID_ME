@@ -75,10 +75,10 @@ const CampFamily = () => {
     }
 
     return (
-        <div className="CampFamily">
+        <div>
             <h1>Camp Add Family Members</h1>
 
-            <div>
+            <div className="CampForm">
                 <select value={value} onChange={handleChange}>
                     <option value="" key={0}>Add</option>
                     {people.map(e =>
@@ -89,13 +89,16 @@ const CampFamily = () => {
                 <Button onClick={handleClick}>Back To Camps</Button>
             </div>
             
-            {personList.map(person =>
-                <PersonCard
-                    person={person}
-                    value={person.id}
-                    removePerson={e => removePersonInList(person.id)}
-                    key={person.id} />
-            )}
+            <div className="CampFamily">
+                {personList.map(person =>
+                    <PersonCard
+                        person={person}
+                        value={person.id}
+                        removePerson={e => removePersonInList(person.id)}
+                        key={person.id} />
+                )}
+            </div>
+            
         </div>
     );
 };

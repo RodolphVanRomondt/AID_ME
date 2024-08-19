@@ -10,7 +10,7 @@ function NavBar({ logout }) {
   const { currentUser } = useContext(UserContext);
   return (
     <div>
-      <Navbar expand="md">
+      <Navbar expand="md" className="navbar">
         <NavLink exact to="/" className="navbar-brand">
           Aid Me
         </NavLink>
