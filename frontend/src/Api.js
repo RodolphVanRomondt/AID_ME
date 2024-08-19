@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "https://aid-me-backend.onrender.com";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 /* API Class */
 
@@ -141,6 +141,16 @@ class AidMeApi {
   static async postDistribution(data) {
     try {
       const res = await this.request(`families/${data.fID}/donations/${data.dID}`, data, "post");
+      return res.distribution;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Update donation for a family. Mark it as True. */
+  static async patchDistribution(data) {
+    try {
+      const res = await this.request(`families/${data.fID}/donations/${data.dID}`, data, "patch");
       return res.distribution;
     } catch (e) {
       return false;

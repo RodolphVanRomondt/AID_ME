@@ -22,8 +22,8 @@ import DonationNew from "./donations/DonationNew";
 import PersonNew from "./person/PersonNew";
 
 import Login from "./auth/Login";
-import SignUp from "./auth/SignUp";
-import Profile from "./profile/Profile";
+// import SignUp from "./auth/SignUp";
+// import Profile from "./profile/Profile";
 
 import { jwtDecode } from "jwt-decode";
 import useLocalStorage from "./useLocalStorage";
@@ -111,7 +111,7 @@ function App() {
               <Route exact path="/camps">
                 <CampList />
               </Route>
-              <Route path="/camps/:id">
+              <Route exact path="/camps/:id">
                 <CampDetail />
               </Route>
               <Route path="/new/camp">
@@ -134,7 +134,7 @@ function App() {
               <Route exact path="/donations">
                 <DonationList />
               </Route>
-              <Route exact path="/donations/:id">
+              <Route path="/donations/:id">
                 <DonationDetail />
               </Route>
               <Route path="/new/donation">
